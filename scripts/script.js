@@ -1,7 +1,9 @@
 // Functional Programming Tasks:
 
 // Task 1: Implement a function that calculates total earnings
-
+function calculateEarnings(ticketPrices){
+    return ticketPrices.reduce((a,b) => a+b, 0);
+}
     // Calculate the total earnings by summing up ticket prices
 
 // Examples to test in console:
@@ -10,7 +12,9 @@ const totalEarnings = calculateEarnings(ticketPrices);
 console.log("Total Earnings:", totalEarnings);
 
 // Task 2: Implement a function to filter out free events from a list of events
-
+function filterFreeEvents(events){
+    return events.filter((event) => !(event.price == 0));
+}
     // Create an array to store paid events
 
     // Iterate through each event
@@ -37,7 +41,12 @@ console.log("Paid Events:", paidEvents);
 // Object-Oriented Programming Tasks:
 
 // Task 3: Define a class for Jazz Musicians
-
+class JazzMusician{
+    constructor(name, instrument){
+        this.name = name;
+        this.instrument = instrument;
+    };
+};
 
 // Examples to test in console:
 const musician = new JazzMusician("Louis Armstrong", "Trumpet");
@@ -45,7 +54,12 @@ const musician = new JazzMusician("Louis Armstrong", "Trumpet");
 console.log("Jazz Musician:", musician);
 
 // Task 4: Extend the JazzMusician class for Vocalists
-
+class Vocalist extends JazzMusician{
+    constructor(name, style){
+        super(name);
+        this.style = style;
+    }
+};
 
 // Examples to test in console:
 const vocalist = new Vocalist("Ella Fitzgerald", "Scat");
@@ -57,7 +71,12 @@ console.log("Jazz Vocalist:", vocalist);
 // Classes and Constructors Tasks:
 
 // Task 5: Create a custom constructor function for Jazz Bands
-
+function JazzBand(bandName, musicGenre){
+    let band = {};
+    band.name = bandName;
+    band.musicGenre = musicGenre;
+    return band;
+}
     // Create a new object with the specified properties
 
     // Return the newly created band object
@@ -70,7 +89,12 @@ console.log("Jazz Band:", band);
 
 // Task 6 : Implement a class with default parameters for Jazz Instruments.
 // The default TYPE should be Saxophone, and the default PLAYER should be John Coltrane.
-
+class JazzInstrument{
+    constructor(type = "Saxophone", player = "John Coltrane"){
+        this.type = type;
+        this.player = player;
+    }
+}
 
 // Examples to test in console:
 const saxophonist = new JazzInstrument();
